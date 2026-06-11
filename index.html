@@ -145,11 +145,12 @@
       width: 36px;
       height: 30px;
       justify-content: center;
+      padding: 9px;
     }
 
     .btn-sm {
       padding: 4px 8px;
-      font-size: 10px;
+      font-size: 11px;
     }
 
     @keyframes pulse-rec {
@@ -176,7 +177,7 @@
 
     .bpm-control label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -301,7 +302,7 @@
     .track-name {
       width: 70px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -410,7 +411,7 @@
     }
 
     .panel-title {
-      font-size: 10px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: var(--text-dim);
@@ -426,7 +427,7 @@
     }
 
     .fx-label {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text);
       width: 65px;
       font-family: 'JetBrains Mono', monospace;
@@ -520,7 +521,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 10px;
+      font-size: 11px;
     }
 
     .switch {
@@ -587,7 +588,7 @@
 
     .seed-display {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--accent);
       background: var(--bg-mid);
       padding: 4px 8px;
@@ -778,10 +779,24 @@
     </div>
 
     <div class="transport-controls">
-      <button class="btn btn-play" id="btnPlay" title="Play/Stop">▶</button>
+      <button class="btn btn-play" id="btnPlay" title="Play/Stop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
       <div class="rand-settings-wrap">
-        <button class="btn btn-sm" id="btnRandomize" title="Generate new pattern">🎲 New</button>
-        <button class="btn btn-sm" id="btnRandSettings" title="Randomization settings" style="padding:4px 5px;font-size:12px;">⚙</button>
+        <button class="btn btn-sm" id="btnRandomize" title="Generate new pattern">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          New
+        </button>
+        <button class="btn btn-sm" id="btnRandSettings" title="Randomization settings" style="padding:4px 5px;font-size:11px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            <circle cx="12" cy="12" r="3" fill="var(--bg-light)" stroke="var(--bg-light)"></circle>
+          </svg>
+        </button>
         <div class="rand-settings-dropdown" id="randDropdown">
           <div class="panel-title">Randomize Options</div>
           <div class="rand-chk-row"><input type="checkbox" id="randKey"><label for="randKey">Key & Scale</label></div>
@@ -791,10 +806,15 @@
           <div class="rand-chk-row"><input type="checkbox" id="randVolumes"><label for="randVolumes">Track Volumes</label></div>
           <div class="rand-chk-row"><input type="checkbox" id="randTimeSig"><label for="randTimeSig">Time Signature</label></div>
           <hr style="border:none;border-top:1px solid var(--border);margin:6px 0;">
-          <div class="rand-chk-row"><input type="checkbox" id="autoAdvance" checked><label for="autoAdvance">Auto-advance (Song mode)</label></div>
+          <div class="rand-chk-row"><input type="checkbox" id="autoAdvance" checked><label for="autoAdvance">Auto-advance</label></div>
         </div>
       </div>
-      <button class="btn btn-sm" id="btnRecord" title="Record output">⏺ Rec</button>
+      <button class="btn btn-sm" id="btnRecord" title="Record output">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+          <circle cx="12" cy="12" r="10"></circle>
+        </svg>
+        Rec
+      </button>
       <span class="record-timer" id="recTimer"></span>
     </div>
 
@@ -852,7 +872,12 @@
 
     <div class="seed-area">
       <input type="text" class="seed-input" id="seedInput" value="424242" maxlength="6" title="Type a seed and press Enter to load it">
-      <button class="btn btn-sm" id="btnCopySeed" title="Copy seed to clipboard">📋</button>
+      <button class="btn btn-sm" id="btnCopySeed" title="Copy seed to clipboard">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard">
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+        </svg>
+      </button>
       <span class="seed-copied" id="seedCopied">Copied!</span>
     </div>
     <div class="time-display" id="timeDisplay">0:00</div>
@@ -964,7 +989,7 @@
 
       <div class="panel-section">
         <div class="panel-title">Info</div>
-        <div style="font-size:10px;color:var(--text-dim);line-height:1.6;">
+        <div style="font-size:11px;color:var(--text-dim);line-height:1.6;">
           <div>Current Section: <span id="infoSection" style="color:var(--accent)">Intro</span></div>
           <div>Measure: <span id="infoMeasure" style="color:var(--accent2)">1</span></div>
           <div>Chord: <span id="infoChord" style="color:var(--accent4)">-</span></div>
@@ -1599,7 +1624,9 @@
 
       Tone.Transport.start('+0.05');
 
-      document.getElementById('btnPlay').textContent = '⏹';
+      document.getElementById('btnPlay').innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+      `;
       document.getElementById('btnPlay').classList.add('active');
       updateStatus('Playing...');
     }
@@ -1623,7 +1650,11 @@
       stepCounter = 0;
       APP.currentBar = 0;
 
-      document.getElementById('btnPlay').textContent = '▶';
+      document.getElementById('btnPlay').innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+      `;
       document.getElementById('btnPlay').classList.remove('active');
       document.getElementById('songProgress').style.width = '0%';
 
@@ -1970,7 +2001,9 @@
       }
 
       document.getElementById('btnRecord').classList.add('recording');
-      document.getElementById('btnRecord').innerHTML = '⏹ Stop';
+      document.getElementById('btnRecord').innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-square"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+      Stop`;
       updateRecTimer();
       updateStatus('Recording...');
     }
@@ -1980,7 +2013,11 @@
       APP.recording = false;
 
       document.getElementById('btnRecord').classList.remove('recording');
-      document.getElementById('btnRecord').innerHTML = '⏺ Rec';
+      document.getElementById('btnRecord').innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
+        <circle cx="12" cy="12" r="10"></circle>
+      </svg>
+      Rec`;
       document.getElementById('recTimer').textContent = '';
 
       try {
